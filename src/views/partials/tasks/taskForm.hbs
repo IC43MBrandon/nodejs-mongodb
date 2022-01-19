@@ -1,0 +1,320 @@
+<div class="card card-body p-4 rounded-0 bg-dark text-white">
+  <h3>Llena el formulario</h3>
+  <form action="/tasks/add" method="post">
+
+    {{! Title Input }}
+    <div class="mb-3">
+      <label for="title">1.Escribe tu matricula:</label>
+      <input
+        id="title"
+        class="form-control rounded-0 bg-dark text-white"
+        type="text"
+        name="title"
+        placeholder="Matricula"
+        autofocus
+        required="true"
+      />
+    </div>
+
+   <div class="mb-3">
+      <label for="nombre">2.Nombre</label>
+      <input
+        class="form-control rounded-0 bg-dark text-white"
+        name="nombre"
+        cols="80"
+        required="true"
+        placeholder="Escribe tu nombre"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="apellido_paterno">3.Apellido Paterno</label>
+      <input
+        class="form-control rounded-0 bg-dark text-white"
+        name="apellido_paterno"
+        cols="80"
+        required="true"
+        placeholder="Escribe tu apellido Paterno"
+     />
+    </div>
+
+      <div class="mb-3">
+      <label for="apellido_matern">3.Apellido Materno</label>
+      <input
+        class="form-control rounded-0 bg-dark text-white"
+        name="apellido_matern"
+        cols="80"
+        required="true"
+        placeholder="Escribe tu apellido Materno"
+     />
+    </div>
+
+       <form action="/upload" method="post" enctype="multipart/form-data">
+        <div class="input-group mb-3">
+         <div class="custom-file">
+          <input type="file" name="image" class="custom-file-input" id="inputGroupFile02">
+          <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Carga tu foto</label>
+         </div>
+       </div>
+     
+    <div>
+      <label for="radio">5.Selecciona tu sexo</label>
+      <br>
+      <input type="radio" name="genero" value="H"> Hombre
+      <input type="radio" name="genero" value="M"> Mujer
+    </div>
+    <br>
+
+     <div class="mb-3">
+      <label for="edad">6.Edad</label>
+      <input
+        class="form-control rounded-0 bg-dark text-white"
+        name="edad"
+        cols="80"
+        required="true"
+        min="14"
+        max="24"
+        placeholder="Escribe tu edad"
+      />
+    </div>
+
+       <div class="mb-3">
+              <label for="edad">7.Estado civil</label>
+              <br>
+              <input type="radio" name="estadocivil" value="Soltero"> Soltero(a)
+              <input type="radio" name="estadocivil" value="Casado"> Casado(a)
+              <input type="radio" name="estadocivil" value="Divorciado"> Divorciado(a)
+              <input type="radio" name="estadocivil" value="Union_libre"> Union libre
+            </div>
+
+         <div class="mb-3">
+              <label for="edad">8.Turno</label>
+              <br>
+              <input type="radio" name="turno" value="Matutino"> Matutino
+              <input type="radio" name="turno" value="Vespertino"> Vespertino
+            </div>
+
+         <label for="title">9.Especialidad:</label>
+           <br>
+          <div class="mb-3">
+              <input type="radio" name="especialidad" value="Laboratorio">{{task.especialidad}} Laboratorio
+              <input type="radio" name="especialidad" value="Contabilidad"> Contabilidad
+              <input type="radio" name="especialidad" value="Ofimatica"> Ofimatica
+              <input type="radio" name="especialidad" value="Dietetica"> Dietetica
+            </div>
+
+     <div class="mb-3">
+      <label for="calle">10.Calle</label>
+      <input
+        class="form-control rounded-0 bg-dark text-white"
+        name="calle"
+        cols="80"
+        required="true"
+        placeholder="Escribe tu calle"
+     />
+    </div>
+
+      <div class="mb-3">
+      <label for="numero_exterior">11.Numero Exterior</label>
+      <input
+        class="form-control rounded-0 bg-dark text-white"
+        name="numero_exterior"
+        cols="80"
+        required="true"
+        placeholder="Escribe tu numero exterior"
+     />
+    </div>
+
+      <div class="mb-3">
+      <label for="numero_interior">12.Numero Interior</label>
+      <input
+        class="form-control rounded-0 bg-dark text-white"
+        name="numero_interior"
+        cols="80"
+        required="true"
+        placeholder="Escribe tu numero interior"
+     />
+    </div>
+
+     <div class="mb-3">
+      <label for="colonia">13.Colonia</label>
+      <input
+        class="form-control rounded-0 bg-dark text-white"
+        name="colonia"
+        cols="80"
+        required="true"
+        placeholder="Escribe tu colonia"
+     />
+    </div>
+
+        <div class="mb-3">
+      <label for="municipio">14.Municipio</label>
+      <input
+        class="form-control rounded-0 bg-dark text-white"
+        name="municipio"
+        cols="80"
+        required="true"
+        placeholder="Escribe tu municipio"
+       />
+     </div>
+
+    <div class="mb-3">
+      <label for="ciudad">15.Ciudad</label>
+      <input
+        class="form-control rounded-0 bg-dark text-white"
+        name="ciudad"
+        cols="80"
+        required="true"
+        placeholder="Escribe tu ciudad"
+       />
+     </div>
+
+       <div class="mb-3">
+      <label for="codigo_postal">16.Codigo Postal</label>
+      <input
+        class="form-control rounded-0 bg-dark text-white"
+        name="codigo_postal"
+        cols="80"
+        required="true"
+        placeholder="Escribe tu codigo postal"
+       />
+     </div>
+
+     <div class="mb-3">
+      <label for="telefono_celular">17.Telefono celular</label>
+      <input
+        class="form-control rounded-0 bg-dark text-white"
+        name="telefono_celular"
+        cols="80"
+        required="true"
+           pattern=".{0}|.{10}"
+        placeholder="Escribe tu telefono celular"
+       />
+     </div>
+
+     <div class="mb-3">
+      <label for="telefono_casa">18.Telefono casa</label>
+      <input
+        class="form-control rounded-0 bg-dark text-white"
+        name="telefono_casa"
+        cols="80"
+        required="true"
+           pattern=".{0}|.{10}"
+        placeholder="Escribe tu telefono casa"
+       />
+     </div>
+
+       <div class="mb-3">
+      <label for="plantel_egreso">19.Plantel de egreso</label>
+      <input
+        class="form-control rounded-0 bg-dark text-white"
+        name="plantel_egreso"
+        cols="80"
+        required="true"
+        placeholder="Escribe tu plantel de egreso"
+       />
+     </div>
+
+      <div class="mb-3">
+      <label for="correo">20.Correo</label>
+      <input
+        class="form-control rounded-0 bg-dark text-white"
+        name="correo"
+        cols="80"
+        required="true"
+        placeholder="Escribe tu correo"
+       />
+     </div>
+
+        <div class="mb-3">
+      <label for="año_ingreso">21.Año de ingreso</label>
+      <input
+        class="form-control rounded-0 bg-dark text-white"
+        name="año_ingreso"
+        cols="80"
+        required="true"
+        placeholder="Escribe el año de ingreso"
+       />
+     </div>
+
+       <div class="mb-3">
+      <label for="año_egreso">22.Año de Egreso</label>
+      <input
+        class="form-control rounded-0 bg-dark text-white"
+        name="año_egreso"
+        cols="80"
+        required="true"
+        placeholder="Escribe el año de egreso"
+       />
+     </div>
+
+      <div class="mb-3">
+       <label for="modalidad_servicio">23.Modalidad del servicio</label>
+       <br>
+       <input type="radio" name="modalidad_servicio" value="Escolarizado"> Escolarizado
+       <input type="radio" name="modalidad_servicio" value="Sistema abierto"> Sistema abierto
+      </div>     
+
+       <div class="mb-3">
+       <label for="actividad_que_realiza">24.¿Que actividad realizas actualmente?</label>
+       <br>
+       <input type="radio" name="actividad_que_realiza" value="Estudia">Estudia
+       <input type="radio" name="actividad_que_realiza" value="Trabaja">Trabaja
+       <input type="radio" name="actividad_que_realiza" value="No estudia ni trabaja">No estudia ni trabaja
+      </div>     
+
+       <div class="mb-3">
+       <label for="estudia_nivel_superior">25.¿Estudia el nivel superior?</label>
+       <br>
+       <input type="radio" name="estudia_nivel_superior" value="Si">Si
+       <input type="radio" name="estudia_nivel_superior" value="No">No
+      </div>     
+
+      <div class="mb-3">
+       <label for="en_que_institucion">26.¿Estudia el nivel superior?</label>
+       <br>
+       <input type="radio" name="en_que_institucion" value="IPN">IPN
+       <input type="radio" name="en_que_institucion" value="UNAM">UNAM
+       <input type="radio" name="en_que_institucion" value="UAM">UAM
+       <input type="radio" name="en_que_institucion" value="UTN">UTN
+       <input type="radio" name="en_que_institucion" value="Otra">Otra
+      </div>     
+
+     <div class="mb-3">
+      <label for="que_carrera_estudia">27.¿Que carrera estudias?</label>
+      <input
+        class="form-control rounded-0 bg-dark text-white"
+        name="que_carrera_estudia"
+        cols="80"
+        placeholder="Escribe que carrera estudias"
+       />
+     </div>
+
+     <div class="mb-3">
+       <label for="causas_por_las_que_trabaja">28¿Cuales son las razones por las que no trabajas?</label>
+       <br>
+       <input type="radio" name="causas_por_las_que_trabaja" value="Para terminar mi carrera">Para terminar mi carrera<br>
+       <input type="radio" name="causas_por_las_que_trabaja" value="Continuo mis estudios superiores">Continuo mis estudios superiores<br>
+       <input type="radio" name="causas_por_las_que_trabaja" value="Ubicacion lejano del trabajo">Ubicacion lejano del trabajo<br>
+       <input type="radio" name="causas_por_las_que_trabaja" value="La empresa ofrece salarios muy bajos">La empresa ofrece salarios muy bajos<br>
+       <input type="radio" name="causas_por_las_que_trabaja" value="Otros">Otros
+      
+      </div>     
+
+       <div class="mb-3">
+      <label for="que_carrera_estudia">Si no trabajas pasar a la pregunta 33</label>
+       </div>
+
+      <div class="mb-3">
+      <label for="que_carrera_estudias">29.¿Que carrera estudias?</label>
+      <input
+        class="form-control rounded-0 bg-dark text-white"
+        name="que_lugar_trabaja"
+        cols="80"
+        placeholder="Escribe que en que carrera estudias"
+       />
+     </div>
+
+    <button href="/gracias" class="btn btn-primary" type="submit">Enviar</button>
+  </form>
+</div>

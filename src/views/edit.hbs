@@ -1,0 +1,314 @@
+<div class="container">
+  <div class="row">
+    <!--FORM-->
+    <div class="col-md-5 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <h1>Actulice el alumno</h1>
+      <label for="title">Matricula:</label>
+          <form action="/tasks/{{task._id}}/edit" method="post">
+            <div class="mb-3">
+              <input
+                class="form-control"
+                type="text"
+                name="title"
+                placeholder="Escribe tu matricula"
+                value="{{task.title}}"
+              />
+            
+             <label for="title">Nombre:</label>
+             <div class="mb-3">
+              <textarea
+                class="form-control"
+                name="nombre"
+                rows="3"
+                placeholder="Escribe tu nombre"
+              >{{task.nombre}}</textarea>
+            </div>
+            <label for="apellido_paterno">Apellido Paterno:</label>
+            <div class="mb-3">
+              <textarea
+                class="form-control"
+                name="apellido_paterno"
+                rows="3"
+                placeholder="Agrega tu apellido"
+              >{{task.apellido_paterno}}</textarea>
+             </div>
+
+             <label for="apellido_mater">Apellido Materno:</label>
+            <div class="mb-3">
+              <textarea
+                class="form-control"
+                name="apellido_matern"
+                rows="3"
+                placeholder="Agrega tu apellido"
+              >{{task.apellido_matern}}</textarea>
+             </div>
+
+
+           <label for="title">Genero:</label>
+           <br>
+           
+          <input type="radio" name="genero" value="H"> Hombre
+          <input type="radio" name="genero" value="M"> Mujer
+          
+          
+          <br>
+               <label for="title">Edad:</label>
+            <div class="mb-3">
+              <textarea
+                class="form-control"
+                name="edad"
+                rows="3"
+                placeholder="Agrega tu edad"
+              >{{task.edad}}</textarea>
+
+              <label for="title">Estado civil:</label>
+              <div class="mb-3">
+              <input type="radio" name="estadocivil" value="Soltero">{{checked estadocivil 'Soltero'}} Soltero(a)
+              <input type="radio" name="estadocivil" value="Casado"> {{checked estadocivil 'Casado'}} Casado(a)
+              <input type="radio" name="estadocivil" value="Divorciado"> Divorciado(a)
+              <input type="radio" name="estadocivil" value="Union_libre"> Union libre
+            </div>
+
+            <label for="title">Turno:</label>
+           <br>
+          <input type="radio" name="turno" value="Matutino">{{task.turno}} Matutino
+          <input type="radio" name="turno" value="Vespertino"> Vespertino
+          <br>
+          <br>
+          <label for="title">Especialidad:</label>
+           <br>
+          <div class="mb-3">
+              <input type="radio" name="especialidad" value="Laboratorio">{{task.especialidad}} Laboratorio
+              <input type="radio" name="especialidad" value="Contabilidad"> Contabilidad
+              <input type="radio" name="especialidad" value="Ofimatica"> Ofimatica
+              <input type="radio" name="especialidad" value="Dietetica"> Dietetica
+            </div>
+
+        <div class="mb-3">
+        <label for="calle">Calle</label>
+           <input
+           class="form-control "
+            name="calle"
+            cols="80"
+            required="true"
+            placeholder="Escribe tu calle"
+             value="{{task.calle}}" >   
+          </div>
+
+         
+           <div class="mb-3">
+        <label for="numero_exterior">Numero exterior</label>
+           <input
+           class="form-control"
+            name="numero_exterior"
+            cols="80"
+            required="true"
+            placeholder="Escribe tu numero exterior"
+              value="{{task.numero_exterior}}" >   
+          </div>
+
+            <div class="mb-3">
+        <label for="numero_interior">Numero interior</label>
+           <input
+           class="form-control"
+            name="numero_interior"
+            cols="80"
+            required="true"
+            placeholder="Escribe tu numero interior"
+             value="{{task.numero_interior}}" > 
+          </div>
+          <br>
+             <label for="numero_interior">Colonia</label>
+           <input
+           class="form-control"
+            name="colonia"
+            cols="80"
+            required="true"
+            placeholder="Escribe tu colonia"
+             value="{{task.colonia}}" > 
+          </div>
+
+          <br>
+          <label for="municipio">Municipio</label>
+           <input
+           class="form-control"
+            name="municipio"
+            cols="80"
+            required="true"
+            placeholder="Escribe tu municipio"
+             value="{{task.municipio}}" > 
+          </div>
+
+          <label for="ciudad">Ciudad</label>
+           <input
+           class="form-control"
+            name="ciudad"
+            cols="80"
+            required="true"
+            placeholder="Escribe tu ciudad"
+             value="{{task.ciudad}}" > 
+         
+
+          <br>
+          <label for="">Codigo Postal</label>
+           <input
+           class="form-control"
+            name="codigo_postal"
+            cols="80"
+            required="true"
+            placeholder="Escribe tu ciudad"
+             value="{{task.codigo_postal}}" > 
+         
+           <br>
+          <label for="">Telefono celular</label>
+           <input
+           class="form-control"
+            name="telefono_celular"
+            cols="80"
+            required="true"
+            placeholder="Escribe tu telefono celular"
+            pattern=".{0}|.{10}"
+             value="{{task.telefono_celular}}" > 
+         
+
+           <br>
+          
+          <label for="">Telefono casa</label>
+           <input
+           class="form-control"
+            name="telefono_casa"
+            cols="80"
+            required="true"
+            placeholder="Escribe tu telefono casa"
+            pattern=".{0}|.{10}"
+             value="{{task.telefono_casa}}" > 
+         
+<br>
+      <label for="plantel_egreso">Plantel de egreso</label>
+      <input
+        class="form-control"
+        name="plantel_egreso"
+        cols="80"
+        required="true"
+        placeholder="Escribe tu plantel de egreso"
+         value="{{task.plantel_egreso}}" > 
+     
+     <br>    
+          <label for="">Correo</label>
+           <input
+           class="form-control"
+            name="correo"
+            cols="80"
+            required="true"
+            placeholder="Escribe tu correo"
+           
+             value="{{task.correo}}" > 
+         
+ <br>    
+          <label for="">Año de ingreso</label>
+           <input
+           class="form-control"
+            name="año_ingreso"
+            cols="80"
+            required="true"
+            placeholder="Escribe tu año de ingreso"
+           
+             value="{{task.año_ingreso}}" > 
+
+    <br>    
+          <label for="">Año de egreso</label>
+           <input
+           class="form-control"
+            name="año_egreso"
+            cols="80"
+            required="true"
+            placeholder="Escribe tu año de egreso"
+           
+             value="{{task.año_egreso}}" > 
+ 
+      <br>
+        <div class="mb-3">
+      <label for="edad">Modalidad del servicio</label>
+       <br>
+       <input type="radio" name="modalidad_servicio" value="Escolarizado" {{task.turno}}> Escolarizado
+       <input type="radio" name="modalidad_servicio" value="Sistema abierto"> Sistema abierto
+       </div>
+          <br>
+          
+
+      <div class="mb-3">
+      <label for="actividad_que_realiza">¿Que actividad realizas actualmente?</label>
+       <br>
+       <input type="radio" name="actividad_que_realiza" value="Estudia">Estudia
+       <input type="radio" name="actividad_que_realiza" value="Trabaja">Trabaja
+       <input type="radio" name="actividad_que_realiza" value="No estudia ni trabaja">No estudia ni trabaja
+       </div>
+        <br>
+       
+
+      <div class="mb-3">
+       <label for="estudia_nivel_superior">¿Estudia el nivel superior?</label>
+       <br>
+       <input type="radio" name="estudia_nivel_superior" value="Si">Si
+       <input type="radio" name="estudia_nivel_superior" value="No">No
+      </div>
+
+
+       <div class="mb-3">
+       <label for="en_que_institucion">¿Estudia el nivel superior?</label>
+       <br>
+       <input type="radio" name="en_que_institucion" value="IPN">IPN
+       <input type="radio" name="en_que_institucion" value="UNAM">UNAM
+       <input type="radio" name="en_que_institucion" value="UAM">UAM
+       <input type="radio" name="en_que_institucion" value="UTN">UTN
+       <input type="radio" name="en_que_institucion" value="Otra">Otra
+      </div>     
+
+     <div class="mb-3">
+      <label for="que_carrera_estudias">.¿Que carrera estudias?</label>
+      <input
+        class="form-control"
+        name="que_carrera_estudias"
+        cols="80"
+        placeholder="Escribe que carrera estudias"
+         value="{{task.que_carrera_estudia}}"
+       >
+     </div>
+      
+
+<br>
+      <div class="mb-3">
+       <label for="causas_por_las_que_trabaja">¿Cuales son las razones por las que no trabajas?</label>
+       <br>
+       <input type="radio" name="causas_por_las_que_trabaja" value="Para terminar mi carrera">Para terminar mi carrera<br>
+       <input type="radio" name="causas_por_las_que_trabaja" value="Continuo mis estudios superiores">Continuo mis estudios superiores<br>
+       <input type="radio" name="causas_por_las_que_trabaja" value="Ubicacion lejano del trabajo">Ubicacion lejano del trabajo<br>
+       <input type="radio" name="causas_por_las_que_trabaja" value="La empresa ofrece salarios muy bajos">La empresa ofrece salarios muy bajo<br>
+       <input type="radio" name="causas_por_las_que_trabaja" value="Otros">Otros
+      
+      </div>     
+
+       <div class="mb-3">
+      <label for="que_lugar_trabaja">.¿En que lugar trabajas?</label>
+      <input
+        class="form-control"
+        name="que_lugar_trabaja"
+        cols="80"
+        placeholder="Escribe que en que lugar trabajas"
+        value="{{task.que_lugar_trabaja}}">
+
+     
+     
+     </div>
+</div>
+<br>
+ </div>
+            <button class="btn btn-primary" type="submit">Actualizar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

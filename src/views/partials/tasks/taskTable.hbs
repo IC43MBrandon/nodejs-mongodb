@@ -1,0 +1,101 @@
+{{#if tasks}}
+  <table class="table table-bordered table-hover table-dark">
+    <thead>
+      <tr>
+        <th>N°</th>
+        <th>Matricula</th>
+        <th>Nombre</th>
+        <th>Apellido Paterno</th>
+        <th>Apellido Materno</th>
+        <th>Genero</th>
+        <th>Edad</th>
+        <th>Estado civil</th>
+        <th>Turno</th>
+        <th>especialidad</th>
+        <th>Calle</th>
+        <th>Numero exterior</th>
+        <th>Numero interior</th>
+        <th>Colonia</th>
+        <th>Municipio</th>
+        <th>Ciudad</th>
+        <th>Codigo postal</th>
+        <th>Telefono celular</th>
+        <th>Telefono casa</th>
+        <th>Plantel de egreso</th>
+         <th>Correo</th>
+        <th>Año de ingreso</th>
+        <th>Año de egreso</th>
+        <th>Modalidad del servicio</th>
+        <th>Actividad que realiza</th>
+        <th>En que grado estudia</th>
+        <th>En que institucion estudia</th>
+        <th>Que carrera estudia</th>
+        <th>Causas por las que trabajas</th>
+        <th>En que lugar trabaja</th>
+        <th>Operations</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each tasks}}
+        <tr>
+          <td>{{@index}}</td>
+          <td><strong>{{title}}</strong></td>
+          <td>{{nombre}}</td>
+          <td>{{apellido_paterno}}</td>
+          <td>{{apellido_matern}}</td>
+          <td>{{genero}}</td>
+          <td>{{edad}}</td>
+          <td>{{estadocivil}}</td>
+          <td>{{turno}}</td>
+          <td>{{especialidad}}</td>
+          <td>{{calle}}</td>
+          <td>{{numero_exterior}}</td>
+          <td>{{numero_interior}}</td>
+          <td>{{colonia}}</td>
+          <td>{{municipio}}</td>
+          <td>{{ciudad}}</td>
+          <td>{{codigo_postal}}</td>
+          <td>{{telefono_celular}}</td>
+          <td>{{telefono_casa}}</td>
+          <td>{{plantel_egreso}}</td>
+          <td>{{correo}}</td>
+          <td>{{año_ingreso}}</td>
+          <td>{{año_egreso}}</td>
+          <td>{{modalidad_servicio}}</td>
+          <td>{{actividad_que_realiza}}</td>
+          <td>{{estudia_nivel_superior}}</td>
+          <td>{{en_que_institucion}}</td>
+          <td>{{que_carrera_estudia}}</td>
+          <td>{{causas_por_las_que_trabaja}}</td>
+          <td>{{que_lugar_trabaja}}</td>
+          <td>
+            {{#if done}}
+              <a
+                class="btn btn-success"
+                href="/tasks/{{_id}}/toggleDone"
+              >Done</a>
+            {{else}}
+              <a class="btn btn-dark" href="/tasks/{{_id}}/toggleDone">
+                Undone
+              </a>
+            {{/if}}
+            <a href="/tasks/{{_id}}/delete" class="btn btn-danger">
+              Delete
+            </a>
+            <a href="/tasks/{{_id}}/edit" class="btn btn-info">
+              Edit
+            </a>
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+{{else}}
+  <div class="h-100 d-flex align-items-center justify-content-center">
+    <div class="text-center text-white">
+      <h1>No tasks</h1>
+      <img src="/icons/empty.svg" class="w-75" />
+    </div>
+
+  </div>
+{{/if}}
