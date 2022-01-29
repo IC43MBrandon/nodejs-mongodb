@@ -47,6 +47,8 @@ export const taskToggleDone = async (req, res, next) => {
   res.redirect("/about");
 };
 
+
+
 export const renderTaskEdit = async (req, res, next) => {
   const task = await Task.findById(req.params.id).lean();
   res.render("edit", { task });

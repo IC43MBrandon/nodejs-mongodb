@@ -18,7 +18,7 @@ import "./config/passport";
 
 const Handlebars = require("handlebars");
 const multer = require('multer');
-const uuid = require('uuid');
+
 const app = express();
 createAdminUser();
 
