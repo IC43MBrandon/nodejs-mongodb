@@ -2,7 +2,10 @@ import { Schema, model } from "mongoose";
 
 const TaskSchema = Schema(
   {
-    title: { type: Number, required: true, trim: true, unique: [ false, 'La matricula esta repetida' ] },
+    title: { type: Number,
+            required: true, 
+            trim: true, 
+            unique: [ false, 'La matricula esta repetida' ] },
     nombre: {
       type      : String, 
       required  : [ true, 'El nombre es necesario' ], 
@@ -132,7 +135,7 @@ const TaskSchema = Schema(
     type      : String, 
     unique    : [ true, 'El correo está duplicado'], 
     required  : [ true, 'El correo es necesario' ], 
-    maxlength : [ 30, 'El correo no puede exceder los 30 caracteres'],
+    maxlength : [ 40, 'El correo no puede exceder los 30 caracteres'],
     match: [ /[a-zA-Z ]/, 'El correo no pueden ser solo numeros' ],
     regex     : function( value ) {
       var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -143,16 +146,24 @@ const TaskSchema = Schema(
 año_ingreso: {
   type: Number,
   required  : [ true, 'El año de ingreso es necesario' ], 
-  min:  [ 2014, 'El año no puede ser menor que 2014'],
-   max: [ 2021, 'El año no puede ser mayor que 2021'],
+  min:  [ 1990, 'El año no puede ser menor que 1990'],
+  max: [ 2022, 'El año no puede ser mayor que 2022'],
 },
 
 año_egreso: {
   type: Number,
   required  : [ true, 'El año de egreso es necesario' ], 
-  min:  [ 2014, 'El año no puede ser menor que 2014'],
-   max: [ 2021, 'El año no puede ser mayor que 2021'],
+  min:  [ 1990, 'El año no puede ser menor que 1990'],
+   max: [ 2022, 'El año no puede ser mayor que 2022'],
 },
+
+grupo:{
+  type: String,
+  enum: ['1601','1602','1603', '1607','1608','1609','1612','1613','1614','1615','1616',
+   '2601','2602', '2603','2607', '2608','2609','2612','2613','2614','2615','2616'],
+},
+
+
 modalidad_servicio:{
   type: String,
   enum: ['Escolarizado', 'Sistema abierto'],
@@ -172,11 +183,14 @@ en_que_institucion:{
   type: String,
   enum: ['IPN', 'UNAM', 'UAM', 'UTN', 'Otra'],
 },
+filename: {
+  type: String
+},
 
 que_carrera_estudia: {
   type: String,
   maxlength : [ 50, 'La carrera no puede exceder los 50 caracteres'],
-  minlength : [ 6, 'La carrera debe contener 6 o más caracteres'],
+  minlength : [ 1, 'La carrera debe contener 6 o más caracteres'],
   match: [ /[a-zA-Z ]/, 'La carrera solo acepta letras' ],
   trim: true,
 },
@@ -188,13 +202,19 @@ causas_por_las_que_trabaja:{
 
 que_lugar_trabaja:{
   type      : String, 
-  required  : [ true, 'El lugar de trabajo es necesario' ], 
   maxlength : [ 50, 'El lugar de trabajo no puede exceder los 50 caracteres'],
   minlength : [ 5, 'El lugar de trabajo debe contener 5 o más caracteres'],
   match: [ /[a-zA-Z ]/, 'El nombre del trabajo solo acepta letras' ],
   trim: true,
 },
 
+causas_por_las_que_no_trabajas_en_tu_perfil:{
+  type      : String, 
+  maxlength : [ 60, 'Las causas no pueden exceder los 60 caracteres'],
+  minlength : [ 2, 'Las causas no pueden contener 2 o más caracteres'],
+  match: [ /[a-zA-Z ]/, 'El nombre del trabajo solo acepta letras' ],
+  trim: true,
+},
 
     done: {
       type: Boolean,

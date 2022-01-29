@@ -120,7 +120,7 @@
         class="form-control rounded-0 bg-dark text-white"
         name="numero_exterior"
         cols="80"
-        required="true"
+      
         placeholder="Escribe tu numero exterior"
      />
     </div>
@@ -131,7 +131,7 @@
         class="form-control rounded-0 bg-dark text-white"
         name="numero_interior"
         cols="80"
-        required="true"
+       
         placeholder="Escribe tu numero interior"
      />
     </div>
@@ -186,7 +186,7 @@
         class="form-control rounded-0 bg-dark text-white"
         name="telefono_celular"
         cols="80"
-        required="true"
+  
            pattern=".{0}|.{10}"
         placeholder="Escribe tu telefono celular"
        />
@@ -198,7 +198,7 @@
         class="form-control rounded-0 bg-dark text-white"
         name="telefono_casa"
         cols="80"
-        required="true"
+        
            pattern=".{0}|.{10}"
         placeholder="Escribe tu telefono casa"
        />
@@ -226,6 +226,7 @@
        />
      </div>
 
+
         <div class="mb-3">
       <label for="año_ingreso">21.Año de ingreso</label>
       <input
@@ -248,15 +249,45 @@
        />
      </div>
 
+       <div class="mb-3">
+       <label for="grupo">23.Grupo</label>
+       <br>
+       <input type="radio" name="grupo" value="1601"> 1601
+       <input type="radio" name="grupo" value="1602"> 1602
+       <input type="radio" name="grupo" value="1603"> 1603
+       <input type="radio" name="grupo" value="1607"> 1607
+       <input type="radio" name="grupo" value="1608"> 1608
+       <input type="radio" name="grupo" value="1609"> 1609
+       <br>
+       <input type="radio" name="grupo" value="1612"> 1612
+       <input type="radio" name="grupo" value="1613"> 1613
+       <input type="radio" name="grupo" value="1614"> 1614
+       <input type="radio" name="grupo" value="1615"> 1615
+       <input type="radio" name="grupo" value="1616"> 1616
+       <input type="radio" name="grupo" value="2601"> 2601
+       <br>
+       <input type="radio" name="grupo" value="2602"> 2602
+       <input type="radio" name="grupo" value="2603"> 2603
+       <input type="radio" name="grupo" value="2607"> 2607
+       <input type="radio" name="grupo" value="2608"> 2608
+       <input type="radio" name="grupo" value="2609"> 2609
+       <input type="radio" name="grupo" value="2612"> 2612
+       <br>
+       <input type="radio" name="grupo" value="2613"> 2613
+       <input type="radio" name="grupo" value="2614"> 2614
+       <input type="radio" name="grupo" value="2615"> 2615
+       <input type="radio" name="grupo" value="2616"> 2616
+      </div>     
+
       <div class="mb-3">
-       <label for="modalidad_servicio">23.Modalidad del servicio</label>
+       <label for="modalidad_servicio">24.Modalidad del servicio</label>
        <br>
        <input type="radio" name="modalidad_servicio" value="Escolarizado"> Escolarizado
        <input type="radio" name="modalidad_servicio" value="Sistema abierto"> Sistema abierto
       </div>     
 
        <div class="mb-3">
-       <label for="actividad_que_realiza">24.¿Que actividad realizas actualmente?</label>
+       <label for="actividad_que_realiza">25.¿Que actividad realizas actualmente?</label>
        <br>
        <input type="radio" name="actividad_que_realiza" value="Estudia">Estudia
        <input type="radio" name="actividad_que_realiza" value="Trabaja">Trabaja
@@ -264,14 +295,14 @@
       </div>     
 
        <div class="mb-3">
-       <label for="estudia_nivel_superior">25.¿Estudia el nivel superior?</label>
+       <label for="estudia_nivel_superior">26.¿Estudia el nivel superior?</label>
        <br>
        <input type="radio" name="estudia_nivel_superior" value="Si">Si
        <input type="radio" name="estudia_nivel_superior" value="No">No
       </div>     
 
       <div class="mb-3">
-       <label for="en_que_institucion">26.¿Estudia el nivel superior?</label>
+       <label for="en_que_institucion">27.¿En que institucion de nivel superior estudia?</label>
        <br>
        <input type="radio" name="en_que_institucion" value="IPN">IPN
        <input type="radio" name="en_que_institucion" value="UNAM">UNAM
@@ -281,7 +312,7 @@
       </div>     
 
      <div class="mb-3">
-      <label for="que_carrera_estudia">27.¿Que carrera estudias?</label>
+      <label for="que_carrera_estudia">28.¿Que carrera estudias?</label>
       <input
         class="form-control rounded-0 bg-dark text-white"
         name="que_carrera_estudia"
@@ -291,7 +322,7 @@
      </div>
 
      <div class="mb-3">
-       <label for="causas_por_las_que_trabaja">28¿Cuales son las razones por las que no trabajas?</label>
+       <label for="causas_por_las_que_trabaja">29¿Cuales son las razones por las que no trabajas?</label>
        <br>
        <input type="radio" name="causas_por_las_que_trabaja" value="Para terminar mi carrera">Para terminar mi carrera<br>
        <input type="radio" name="causas_por_las_que_trabaja" value="Continuo mis estudios superiores">Continuo mis estudios superiores<br>
@@ -306,14 +337,25 @@
        </div>
 
       <div class="mb-3">
-      <label for="que_carrera_estudias">29.¿Que carrera estudias?</label>
+      <label for="que_lugar_trabaja">30.¿En que lugar trabajas?</label>
       <input
         class="form-control rounded-0 bg-dark text-white"
         name="que_lugar_trabaja"
         cols="80"
-        placeholder="Escribe que en que carrera estudias"
+        placeholder="Escribe que en que lugar trabajas"
        />
      </div>
+
+       <div class="mb-3">
+      <label for="causas_por_las_que_no_trabajas_en_tu_perfil">31.¿Cuales son las causas por las que actualmente trabaja en actividades que no son de tu perfil?</label>
+      <input
+        class="form-control rounded-0 bg-dark text-white"
+        name="causas_por_las_que_no_trabajas_en_tu_perfil"
+        cols="80"
+        placeholder="Escribe que las causas"
+       />
+     </div>
+
 
     <button href="/gracias" class="btn btn-primary" type="submit">Enviar</button>
   </form>

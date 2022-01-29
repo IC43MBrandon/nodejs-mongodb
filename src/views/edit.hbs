@@ -4,7 +4,7 @@
     <div class="col-md-5 offset-md-3">
       <div class="card">
         <div class="card-body">
-          <h1>Actulice el alumno</h1>
+          <h1>Actualice el alumno</h1>
       <label for="title">Matricula:</label>
           <form action="/tasks/{{task._id}}/edit" method="post">
             <div class="mb-3">
@@ -49,8 +49,8 @@
            <label for="title">Genero:</label>
            <br>
            
-          <input type="radio" name="genero" value="H"> Hombre
-          <input type="radio" name="genero" value="M"> Mujer
+          <input type="radio" name="genero" value="H"{{checked task.genero 'H'}}> Hombre
+          <input type="radio" name="genero" value="M" {{checked task.genero 'M'}}> Mujer
           
           
           <br>
@@ -65,25 +65,25 @@
 
               <label for="title">Estado civil:</label>
               <div class="mb-3">
-              <input type="radio" name="estadocivil" value="Soltero">{{checked estadocivil 'Soltero'}} Soltero(a)
-              <input type="radio" name="estadocivil" value="Casado"> {{checked estadocivil 'Casado'}} Casado(a)
-              <input type="radio" name="estadocivil" value="Divorciado"> Divorciado(a)
-              <input type="radio" name="estadocivil" value="Union_libre"> Union libre
+              <input type="radio" name="estadocivil" value="Soltero" {{checked task.estadocivil 'Soltero'}}> Soltero(a)
+              <input type="radio" name="estadocivil" value="Casado" {{checked task.estadocivil 'Casado'}}>  Casado(a)
+              <input type="radio" name="estadocivil" value="Divorciado" {{checked task.estadocivil 'Divorciado'}}> Divorciado(a)
+              <input type="radio" name="estadocivil" value="Union_libre" {{checked task.estadocivil 'Union_libre'}}> Union libre
             </div>
 
             <label for="title">Turno:</label>
            <br>
-          <input type="radio" name="turno" value="Matutino">{{task.turno}} Matutino
-          <input type="radio" name="turno" value="Vespertino"> Vespertino
+          <input type="radio" name="turno" value="Matutino"{{checked task.turno 'Matutino'}}>Matutino
+          <input type="radio" name="turno" value="Vespertino"{{checked task.turno 'Vespertino'}}> Vespertino
           <br>
           <br>
           <label for="title">Especialidad:</label>
            <br>
           <div class="mb-3">
-              <input type="radio" name="especialidad" value="Laboratorio">{{task.especialidad}} Laboratorio
-              <input type="radio" name="especialidad" value="Contabilidad"> Contabilidad
-              <input type="radio" name="especialidad" value="Ofimatica"> Ofimatica
-              <input type="radio" name="especialidad" value="Dietetica"> Dietetica
+              <input type="radio" name="especialidad" value="Laboratorio"{{checked task.especialidad 'Laboratorio'}} > Laboratorio
+              <input type="radio" name="especialidad" value="Contabilidad"{{checked task.especialidad 'Contabilidad'}}> Contabilidad
+              <input type="radio" name="especialidad" value="Ofimatica"{{checked task.especialidad 'Ofimatica'}} > Ofimatica
+              <input type="radio" name="especialidad" value="Dietetica" {{checked task.especialidad 'Dietetica'}}> Dietetica
             </div>
 
         <div class="mb-3">
@@ -104,7 +104,7 @@
            class="form-control"
             name="numero_exterior"
             cols="80"
-            required="true"
+          
             placeholder="Escribe tu numero exterior"
               value="{{task.numero_exterior}}" >   
           </div>
@@ -115,11 +115,11 @@
            class="form-control"
             name="numero_interior"
             cols="80"
-            required="true"
+           
             placeholder="Escribe tu numero interior"
              value="{{task.numero_interior}}" > 
           </div>
-          <br>
+          
              <label for="numero_interior">Colonia</label>
            <input
            class="form-control"
@@ -130,7 +130,7 @@
              value="{{task.colonia}}" > 
           </div>
 
-          <br>
+          
           <label for="municipio">Municipio</label>
            <input
            class="form-control"
@@ -229,11 +229,43 @@
              value="{{task.año_egreso}}" > 
  
       <br>
+
+        <div class="mb-3">
+       <label for="grupo">23.Grupo</label>
+       <br>
+       <input type="radio" name="grupo" value="1601" {{checked task.grupo '1601'}} > 1601
+       <input type="radio" name="grupo" value="1602" {{checked task.grupo '1602'}} > 1602
+       <input type="radio" name="grupo" value="1603" {{checked task.grupo '1603'}} > 1603
+       <input type="radio" name="grupo" value="1607" {{checked task.grupo '1607'}} > 1607
+       <input type="radio" name="grupo" value="1608" {{checked task.grupo '1608'}} > 1608
+       <input type="radio" name="grupo" value="1609" {{checked task.grupo '1609'}} > 1609
+       <br>
+       <input type="radio" name="grupo" value="1612" {{checked task.grupo '1612'}} > 1612
+       <input type="radio" name="grupo" value="1613" {{checked task.grupo '1613'}} > 1613
+       <input type="radio" name="grupo" value="1614" {{checked task.grupo '1614'}} > 1614
+       <input type="radio" name="grupo" value="1615" {{checked task.grupo '1615'}} > 1615
+       <input type="radio" name="grupo" value="1616" {{checked task.grupo '1616'}} > 1616
+       <input type="radio" name="grupo" value="2601" {{checked task.grupo '2601'}} > 2601
+       <br>
+       <input type="radio" name="grupo" value="2602" {{checked task.grupo '2602'}} > 2602
+       <input type="radio" name="grupo" value="2603" {{checked task.grupo '2603'}} > 2603
+       <input type="radio" name="grupo" value="2607" {{checked task.grupo '2607'}} > 2607
+       <input type="radio" name="grupo" value="2608" {{checked task.grupo '2608'}} > 2608
+       <input type="radio" name="grupo" value="2609" {{checked task.grupo '2609'}} > 2609
+       <input type="radio" name="grupo" value="2612" {{checked task.grupo '2612'}} > 2612
+       <br>
+       <input type="radio" name="grupo" value="2613" {{checked task.grupo '2613'}} > 2613
+       <input type="radio" name="grupo" value="2614" {{checked task.grupo '2614'}} > 2614
+       <input type="radio" name="grupo" value="2615" {{checked task.grupo '2615'}} > 2615
+       <input type="radio" name="grupo" value="2616" {{checked task.grupo '2616'}} > 2616
+      </div>     
+
+      <br>
         <div class="mb-3">
       <label for="edad">Modalidad del servicio</label>
        <br>
-       <input type="radio" name="modalidad_servicio" value="Escolarizado" {{task.turno}}> Escolarizado
-       <input type="radio" name="modalidad_servicio" value="Sistema abierto"> Sistema abierto
+       <input type="radio" name="modalidad_servicio" value="Escolarizado" {{checked task.modalidad_servicio 'Escolarizado'}} > Escolarizado
+       <input type="radio" name="modalidad_servicio" value="Sistema abierto" {{checked task.modalidad_servicio 'Sistema abierto'}}> Sistema abierto
        </div>
           <br>
           
@@ -241,9 +273,9 @@
       <div class="mb-3">
       <label for="actividad_que_realiza">¿Que actividad realizas actualmente?</label>
        <br>
-       <input type="radio" name="actividad_que_realiza" value="Estudia">Estudia
-       <input type="radio" name="actividad_que_realiza" value="Trabaja">Trabaja
-       <input type="radio" name="actividad_que_realiza" value="No estudia ni trabaja">No estudia ni trabaja
+       <input type="radio" name="actividad_que_realiza" value="Estudia" {{checked task.actividad_que_realiza 'Estudia'}}>Estudia
+       <input type="radio" name="actividad_que_realiza" value="Trabaja"{{checked task.actividad_que_realiza 'Trabaja'}} >Trabaja
+       <input type="radio" name="actividad_que_realiza" value="No estudia ni trabaja"{{checked task.actividad_que_realiza 'No estudia ni trabaja'}} >No estudia ni trabaja
        </div>
         <br>
        
@@ -251,19 +283,19 @@
       <div class="mb-3">
        <label for="estudia_nivel_superior">¿Estudia el nivel superior?</label>
        <br>
-       <input type="radio" name="estudia_nivel_superior" value="Si">Si
-       <input type="radio" name="estudia_nivel_superior" value="No">No
+       <input type="radio" name="estudia_nivel_superior" value="Si"{{checked task.estudia_nivel_superior 'Si'}}>Si
+       <input type="radio" name="estudia_nivel_superior" value="No"{{checked task.estudia_nivel_superior 'No'}}>No
       </div>
 
 
        <div class="mb-3">
-       <label for="en_que_institucion">¿Estudia el nivel superior?</label>
+       <label for="en_que_institucion">¿En que institucion de nivel superior estudia?</label>
        <br>
-       <input type="radio" name="en_que_institucion" value="IPN">IPN
-       <input type="radio" name="en_que_institucion" value="UNAM">UNAM
-       <input type="radio" name="en_que_institucion" value="UAM">UAM
-       <input type="radio" name="en_que_institucion" value="UTN">UTN
-       <input type="radio" name="en_que_institucion" value="Otra">Otra
+       <input type="radio" name="en_que_institucion" value="IPN"{{checked task.en_que_institucion 'IPN'}} >IPN
+       <input type="radio" name="en_que_institucion" value="UNAM"{{checked task.en_que_institucion 'UNAM'}}>UNAM
+       <input type="radio" name="en_que_institucion" value="UAM"{{checked task.en_que_institucion 'UAM'}}>UAM
+       <input type="radio" name="en_que_institucion" value="UTN"{{checked task.en_que_institucion 'UTN'}}>UTN
+       <input type="radio" name="en_que_institucion" value="Otra"{{checked task.en_que_institucion 'Otra'}}>Otra
       </div>     
 
      <div class="mb-3">
@@ -282,11 +314,11 @@
       <div class="mb-3">
        <label for="causas_por_las_que_trabaja">¿Cuales son las razones por las que no trabajas?</label>
        <br>
-       <input type="radio" name="causas_por_las_que_trabaja" value="Para terminar mi carrera">Para terminar mi carrera<br>
-       <input type="radio" name="causas_por_las_que_trabaja" value="Continuo mis estudios superiores">Continuo mis estudios superiores<br>
-       <input type="radio" name="causas_por_las_que_trabaja" value="Ubicacion lejano del trabajo">Ubicacion lejano del trabajo<br>
-       <input type="radio" name="causas_por_las_que_trabaja" value="La empresa ofrece salarios muy bajos">La empresa ofrece salarios muy bajo<br>
-       <input type="radio" name="causas_por_las_que_trabaja" value="Otros">Otros
+       <input type="radio" name="causas_por_las_que_trabaja" value="Para terminar mi carrera"{{checked task.causas_por_las_que_trabaja 'Para terminar mi carrera'}}>Para terminar mi carrera<br>
+       <input type="radio" name="causas_por_las_que_trabaja" value="Continuo mis estudios superiores"{{checked task.causas_por_las_que_trabaja 'Continuo mis estudios superiores'}}>Continuo mis estudios superiores<br>
+       <input type="radio" name="causas_por_las_que_trabaja" value="Ubicacion lejano del trabajo"{{checked task.causas_por_las_que_trabaja 'Ubicacion lejano del trabajo'}}>Ubicacion lejano del trabajo<br>
+       <input type="radio" name="causas_por_las_que_trabaja" value="La empresa ofrece salarios muy bajos"{{checked task.causas_por_las_que_trabaja 'La empresa ofrece salarios muy bajos'}}>La empresa ofrece salarios muy bajo<br>
+       <input type="radio" name="causas_por_las_que_trabaja" value="Otros"{{checked task.causas_por_las_que_trabaja 'Otros'}}>Otros
       
       </div>     
 
@@ -300,7 +332,17 @@
         value="{{task.que_lugar_trabaja}}">
 
      
-     
+     <div class="mb-3">
+      <label for="causas_por_las_que_no_trabajas_en_tu_perfil">30.¿Cuales son las causas por las que actualmente trabaja en actividades que no son de tu perfil?</label>
+      <input
+        class="form-control"
+        name="causas_por_las_que_no_trabajas_en_tu_perfil"
+        cols="80"
+        placeholder="Escribe que las causas"
+         value="{{task.causas_por_las_que_no_trabajas_en_tu_perfil}}">
+    
+     </div>
+
      </div>
 </div>
 <br>

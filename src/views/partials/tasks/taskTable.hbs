@@ -25,6 +25,7 @@
          <th>Correo</th>
         <th>Año de ingreso</th>
         <th>Año de egreso</th>
+        <th>Grupo</th>
         <th>Modalidad del servicio</th>
         <th>Actividad que realiza</th>
         <th>En que grado estudia</th>
@@ -32,6 +33,7 @@
         <th>Que carrera estudia</th>
         <th>Causas por las que trabajas</th>
         <th>En que lugar trabaja</th>
+        <th>Causas por las que no ejerce su perfil</th>
         <th>Operations</th>
       </tr>
     </thead>
@@ -61,6 +63,7 @@
           <td>{{correo}}</td>
           <td>{{año_ingreso}}</td>
           <td>{{año_egreso}}</td>
+          <td>{{grupo}}</td>
           <td>{{modalidad_servicio}}</td>
           <td>{{actividad_que_realiza}}</td>
           <td>{{estudia_nivel_superior}}</td>
@@ -68,6 +71,7 @@
           <td>{{que_carrera_estudia}}</td>
           <td>{{causas_por_las_que_trabaja}}</td>
           <td>{{que_lugar_trabaja}}</td>
+          <td>{{causas_por_las_que_no_trabajas_en_tu_perfil}}</td>
           <td>
             {{#if done}}
               <a
@@ -84,6 +88,9 @@
             </a>
             <a href="/tasks/{{_id}}/edit" class="btn btn-info">
               Edit
+            </a>
+             <a href="/tasks/{{_id}}/consulta" class="btn btn-primary">
+              Consulta
             </a>
           </td>
         </tr>

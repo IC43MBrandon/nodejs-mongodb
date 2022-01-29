@@ -17,7 +17,8 @@ import userRoutes from "./routes/users.routes";
 import "./config/passport";
 
 const Handlebars = require("handlebars");
-
+const multer = require('multer');
+const uuid = require('uuid');
 const app = express();
 createAdminUser();
 
@@ -53,11 +54,19 @@ app.use(passport.session());
 app.use(flash());
 
 
+const storage = multer.diskStorage({
+  destination: path.join(__dirname, 'public/img/uploads'),
+  filename: (req, file, cb, filename) => {
+      console.log(file);
+    
+  }
+}) 
+app.use(multer({storage}).single('image'));
+
 Handlebars.registerHelper('checked', function(value, test) {
   if (value == undefined) return '';
   return value==test ? 'checked' : '';
 });
-
 
 app.use((req, res, next) => {
   res.locals.success_msg = req.flash("success_msg");
